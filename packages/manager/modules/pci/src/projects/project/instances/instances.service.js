@@ -8,6 +8,10 @@ import round from 'lodash/round';
 import reduce from 'lodash/reduce';
 import some from 'lodash/some';
 
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import gql from 'graphql-tag';
 import Instance from '../../../components/project/instance/instance.class';
 import InstanceQuota from '../../../components/project/instance/quota/quota.class';
 import BlockStorage from '../storages/blocks/block.class';
@@ -583,6 +587,70 @@ export default class PciProjectInstanceService {
           }),
           {},
         );
+      });
+  }
+
+  getGrapgQlIntances(projectId) {
+    const httpLink = new HttpLink({
+      uri: 'http://localhost:4000',
+      credentials: 'include',
+    });
+    const client = new ApolloClient({
+      link: httpLink,
+      cache: new InMemoryCache({
+        dataIdFromObject: (object) => object.id || null,
+      }),
+    });
+
+    const query = gql`
+      query instances($projectId: String) {
+        instances(projectId: $projectId) {
+          id
+          name
+          location
+          region
+          status
+          flavor {
+            name
+            capabilities {
+              name
+              enabled
+            }
+          }
+          image {
+            name
+            distribution
+            user
+            type
+            tags
+          }
+          ipAddresses {
+            ip
+            type
+            version
+          }
+          volumes {
+            id
+            name
+          }
+          monthlyBilling {
+            since
+            status
+          }
+        }
+      }
+    `;
+
+    return client
+      .query({
+        query,
+        variables: {
+          projectId,
+        },
+      })
+      .then((res) => {
+        console.log(res);
+        return map(res.data.instances, (instance) => new Instance(instance));
       });
   }
 }

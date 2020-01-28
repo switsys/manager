@@ -28,6 +28,15 @@
     "test": "yarn lint",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
+  "dependencies": {
+    "angular1-apollo": "^0.3.0",
+    "apollo-boost": "^0.4.7",
+    "apollo-cache-inmemory": "^1.6.5",
+    "apollo-client": "^2.6.8",
+    "apollo-link": "^1.2.13",
+    "apollo-link-http": "^1.5.16",
+    "graphql": "^14.6.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^8.3.3",
     "@commitlint/config-angular": "^8.2.0",

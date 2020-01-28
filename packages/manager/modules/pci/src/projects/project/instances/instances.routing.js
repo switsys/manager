@@ -18,7 +18,7 @@ export default /* @ngInject */ ($stateProvider) => {
       instances: /* @ngInject */ (
         PciProjectsProjectInstanceService,
         projectId,
-      ) => PciProjectsProjectInstanceService.getAll(projectId),
+      ) => PciProjectsProjectInstanceService.getGrapgQlIntances(projectId),
       addInstance: /* @ngInject */ ($state, projectId) => () =>
         $state.go('pci.projects.project.instances.add', {
           projectId,
