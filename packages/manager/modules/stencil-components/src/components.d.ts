@@ -29,6 +29,10 @@ export namespace Components {
     */
     'middle': string;
   }
+  interface ScDatagrid {
+    'getData': Function;
+    'providedData': any[];
+  }
   interface SlotExample {
     'innerFunction': Function;
   }
@@ -49,6 +53,12 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLScDatagridElement extends Components.ScDatagrid, HTMLStencilElement {}
+  var HTMLScDatagridElement: {
+    prototype: HTMLScDatagridElement;
+    new (): HTMLScDatagridElement;
+  };
+
   interface HTMLSlotExampleElement extends Components.SlotExample, HTMLStencilElement {}
   var HTMLSlotExampleElement: {
     prototype: HTMLSlotExampleElement;
@@ -57,6 +67,7 @@ declare global {
   interface HTMLElementTagNameMap {
     'button-clicker': HTMLButtonClickerElement;
     'my-component': HTMLMyComponentElement;
+    'sc-datagrid': HTMLScDatagridElement;
     'slot-example': HTMLSlotExampleElement;
   }
 }
@@ -82,6 +93,10 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface ScDatagrid {
+    'getData'?: Function;
+    'providedData'?: any[];
+  }
   interface SlotExample {
     'innerFunction'?: Function;
   }
@@ -89,6 +104,7 @@ declare namespace LocalJSX {
   interface IntrinsicElements {
     'button-clicker': ButtonClicker;
     'my-component': MyComponent;
+    'sc-datagrid': ScDatagrid;
     'slot-example': SlotExample;
   }
 }
@@ -101,6 +117,7 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'button-clicker': LocalJSX.ButtonClicker & JSXBase.HTMLAttributes<HTMLButtonClickerElement>;
       'my-component': LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+      'sc-datagrid': LocalJSX.ScDatagrid & JSXBase.HTMLAttributes<HTMLScDatagridElement>;
       'slot-example': LocalJSX.SlotExample & JSXBase.HTMLAttributes<HTMLSlotExampleElement>;
     }
   }

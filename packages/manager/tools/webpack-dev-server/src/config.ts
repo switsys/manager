@@ -1,13 +1,16 @@
-import DuplicatePackageCheckerPlugin from 'duplicate-package-checker-webpack-plugin';
-import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
-import yn from 'yn';
+import DuplicatePackageCheckerPlugin from "duplicate-package-checker-webpack-plugin";
+import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
+import yn from "yn";
 
-import Sso from './sso';
-import serverProxy from './proxy';
+import Sso from "./sso";
+import serverProxy from "./proxy";
 
-export = (env) => {
-  const region = (env.region || process.env.npm_package_config_region || 'eu')
-    .toLowerCase();
+export = env => {
+  const region = (
+    env.region ||
+    process.env.npm_package_config_region ||
+    "eu"
+  ).toLowerCase();
   const proxy = [serverProxy.v6(region)];
   const sso = new Sso(region);
 
@@ -15,28 +18,29 @@ export = (env) => {
     proxy.unshift(serverProxy.aapi);
   }
   if (env.dev) {
-    proxy.unshift(
-      ...env.dev.map(config => serverProxy.dev(config)),
-    );
+    proxy.unshift(...env.dev.map(config => serverProxy.dev(config)));
   }
   return {
-    mode: 'development',
+    mode: "development",
     plugins: [
       new DuplicatePackageCheckerPlugin(),
-      new FriendlyErrorsWebpackPlugin(),
+      new FriendlyErrorsWebpackPlugin()
     ],
     devServer: {
       before(app) {
-        app.get('/auth', sso.auth.bind(sso));
-        app.get('/auth/check', sso.checkAuth.bind(sso));
+        app.get("/auth", sso.auth.bind(sso));
+        app.get("/auth/check", sso.checkAuth.bind(sso));
       },
-      clientLogLevel: 'none',
-      logLevel: 'silent',
-      host: env.host || process.env.npm_package_config_host || 'localhost',
+      clientLogLevel: "none",
+      logLevel: "silent",
+      host: env.host || process.env.npm_package_config_host || "localhost",
       https: env.https || yn(process.env.npm_package_config_https) || false,
       overlay: true,
-      port: env.port || Number.parseInt(process.env.npm_package_config_port, 10) || 9090,
-      proxy,
-    },
+      port:
+        env.port ||
+        Number.parseInt(process.env.npm_package_config_port, 10) ||
+        9090,
+      proxy
+    }
   };
 };
