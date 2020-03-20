@@ -1888,6 +1888,14 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@ovh-ux/manager-core@^7.5.0":
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-core/-/manager-core-7.6.2.tgz#feb47b957ec5a3e9c738138d66be5785f21ba022"
+  integrity sha512-cJV89OTuaJDKgYhkhcy6X0zBt2LrRX49lwbxb1qxB6BTh0IPDb7zS1e3+U2pkgXkNnH7gc6RA+HhBYQWLcTwWw==
+  dependencies:
+    "@ovh-ux/ng-translate-async-loader" "^2.0.2"
+    lodash "^4.17.15"
+
 "@ovh-ux/ng-ovh-actions-menu@^5.0.4":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-actions-menu/-/ng-ovh-actions-menu-5.0.4.tgz#10cce5e9cbd768b1c79680ecc523ddc5ca52c778"
@@ -1895,7 +1903,7 @@
   dependencies:
     lodash "^4.17.15"
 
-"@ovh-ux/ng-ovh-api-wrappers@^4.0.7":
+"@ovh-ux/ng-ovh-api-wrappers@^4.0.4", "@ovh-ux/ng-ovh-api-wrappers@^4.0.7":
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-api-wrappers/-/ng-ovh-api-wrappers-4.0.7.tgz#f07cff3c42ef1c9d1655e2300617528a7d8b2f4f"
   integrity sha512-oylG6ae9LKsUolZK9ORdd6yAu90VRX/45Ss9tZBMlUN7uHeyVMPpdzAJtY0DzgoRTwX++KteOu8bcUj5kTIM4A==
@@ -1957,6 +1965,32 @@
   dependencies:
     filesize "^3.6.1"
     lodash "^4.17.15"
+
+"@ovh-ux/ng-pagination-front@^8.0.1":
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-pagination-front/-/ng-pagination-front-8.0.1.tgz#d21b68472aed41ef78fdbc3b22cde8610e75a449"
+  integrity sha512-TrjtY/CKhPBBD73eVSIJXu092FtgcIo6p4th5/p9ViB/3ButVvwTGkRE75vnTd6UQtgJxjTqdygJa6J7Juc/xw==
+  dependencies:
+    lodash "^4.17.15"
+
+"@ovh-ux/ng-q-allsettled@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-q-allsettled/-/ng-q-allsettled-1.0.1.tgz#2effcc5655f8a22c363a7b45f3644022708c4c4d"
+  integrity sha512-ygbXJg4Qg5fUeZ4mk1YNdTORgArC7Y9IftVYv8AyLiiVQVVKO+/cKeleEJfaAVTjzZWhh0JY9bqmafDGbwrbEA==
+  dependencies:
+    lodash "^4.17.15"
+
+"@ovh-ux/ng-tail-logs@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-tail-logs/-/ng-tail-logs-2.0.2.tgz#0231443aa12878e80cc5e201be1359832e0f8c7c"
+  integrity sha512-OCMHTktcOIkIfSMOcF7/a6FcQzaJzNNzuEXDiZ/pfQRx2ZNRpnu2ESRifd75iIqY+KW6eU2y65r/pchgjpeA5g==
+  dependencies:
+    lodash "^4.17.15"
+
+"@ovh-ux/ng-translate-async-loader@^2.0.2", "@ovh-ux/ng-translate-async-loader@^2.0.3":
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/ng-translate-async-loader/-/ng-translate-async-loader-2.0.3.tgz#256c53fc65ce07e8cf8412ac5c20bda0da8f1273"
+  integrity sha512-PpO/B0HvSx4A5UMYRMMv8kWn7TPS2WGAGzvuCE2mu0jtZw71hwaFWdLlkYoBfhUQNKNKmkJbSW/xK+QLibcZIA==
 
 "@ovh-ux/rollup-plugin-less-inject@^1.0.4":
   version "1.0.4"
@@ -12684,10 +12718,10 @@ ovh-angular-ui-confirm-modal@^1.0.2:
   resolved "https://registry.yarnpkg.com/ovh-angular-ui-confirm-modal/-/ovh-angular-ui-confirm-modal-1.0.2.tgz#92e6736588a4fb1de6353f1a17ab1962679a698d"
   integrity sha512-3V17DbzWjUjl9sKCd25Oycn+7eqg6iW+DpizwVmixHFzDNDMnpKSGmxRLrOq+q9YNE7IepoAKWjoSiy2+zOEEg==
 
-ovh-api-services@^9.42.0:
-  version "9.42.0"
-  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.42.0.tgz#8935f1ea27328ea39cf4701f3a9f7ec995245baf"
-  integrity sha512-z4NhXJnEuhv75xQoqmnBrrlBUMOiB1dl01NfAfBabxP7DhiAeneQkZ35YaP9FIu7Kd799MCaOb75ENkexksTEA==
+ovh-api-services@^9.26.0, ovh-api-services@^9.41.1:
+  version "9.41.1"
+  resolved "https://registry.yarnpkg.com/ovh-api-services/-/ovh-api-services-9.41.1.tgz#872dd4501c89bd2a16cfb6659e316722e365a3eb"
+  integrity sha512-ZtrvvNd5Be/LLH5pBFOEWIS+ICN3YjxqF85b0HaWN1EvEi4XqtOtfxwjGVfmYdbuRs2RX73br9K1t6Ed6Thf4A==
   dependencies:
     lodash "^4.17.15"
 
@@ -12718,7 +12752,7 @@ ovh-ngstrap@^4.0.2:
   resolved "https://registry.yarnpkg.com/ovh-ngstrap/-/ovh-ngstrap-4.0.2.tgz#059291bfb9f59b78df991e476dd2ede0507cb3c9"
   integrity sha1-BZKRv7n1m3jfmR5HbdLt4FB8s8k=
 
-ovh-ui-angular@^3.15.1:
+ovh-ui-angular@^3.15.1, ovh-ui-angular@^3.9.9:
   version "3.15.1"
   resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-3.15.1.tgz#b766938452630b06a3d59fbe9c5b94d6f7e05af2"
   integrity sha512-EcfYUP5dZFSNX5Tqy0Bd1zaqyEVBnypMTGs6O/qoqemmhYEP6nXJLvheiqxXagt/wka/jyyJDzqMCQmo4EXUBQ==
