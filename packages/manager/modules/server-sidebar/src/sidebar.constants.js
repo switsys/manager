@@ -180,7 +180,7 @@ export const IAAS_CONFIG = {
 export const PAAS_CONFIG = {
   id: 'paas',
   loadOnState: [
-    'paas.cda',
+    'cda',
     'paas.veeam.detail',
     'veeam-cloud-connect',
     'veeam-enterprise',
@@ -188,10 +188,10 @@ export const PAAS_CONFIG = {
   types: [
     {
       path: '/dedicated/ceph',
-      state: 'paas.cda.cda-details.cda-details-home',
+      state: 'cda.cda-details.cda-details-home',
       stateParams: ['serviceName'],
       icon: 'ovh-font ovh-font-cloud-disk-array',
-      app: [CLOUD],
+      app: [DEDICATED],
       regions: ['EU', 'CA'],
       searchKeys: ['Cloud Disk Array', 'CDA'],
     },
