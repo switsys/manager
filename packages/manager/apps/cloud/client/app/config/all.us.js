@@ -145,7 +145,6 @@ angular
       home: {
         US: 'https://docs.us.ovhcloud.com',
       },
-      cda: {},
       ip_failover: {
         US: {
           debian: 'https://www.ovh.com/ca/en/g2042.ip_fail_over_debian',

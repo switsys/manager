@@ -390,7 +390,6 @@ angular
         SN: 'https://docs.ovh.com/gb/en/',
         TN: 'https://docs.ovh.com/gb/en/',
       },
-      cda: 'storage/',
       ip_failover: {
         CZ: {
           debian: 'https://www.ovh.co.uk/g2042.ip_fail_over_debian',

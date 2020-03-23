@@ -208,7 +208,6 @@ angular
         WE: 'https://docs.ovh.com/ca/en/',
         WS: 'https://docs.ovh.com/ca/en/',
       },
-      cda: 'storage/',
       ip_failover: {
         ASIA: {
           debian: 'https://www.ovh.com/ca/en/g2042.ip_fail_over_debian',
