@@ -1888,6 +1888,14 @@
   dependencies:
     "@types/node" ">= 8"
 
+"@ovh-ux/manager-core@^7.5.0":
+  version "7.6.2"
+  resolved "https://registry.yarnpkg.com/@ovh-ux/manager-core/-/manager-core-7.6.2.tgz#feb47b957ec5a3e9c738138d66be5785f21ba022"
+  integrity sha512-cJV89OTuaJDKgYhkhcy6X0zBt2LrRX49lwbxb1qxB6BTh0IPDb7zS1e3+U2pkgXkNnH7gc6RA+HhBYQWLcTwWw==
+  dependencies:
+    "@ovh-ux/ng-translate-async-loader" "^2.0.2"
+    lodash "^4.17.15"
+
 "@ovh-ux/ng-ovh-actions-menu@^5.0.4":
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-actions-menu/-/ng-ovh-actions-menu-5.0.4.tgz#10cce5e9cbd768b1c79680ecc523ddc5ca52c778"
@@ -1895,7 +1903,7 @@
   dependencies:
     lodash "^4.17.15"
 
-"@ovh-ux/ng-ovh-api-wrappers@^4.0.7":
+"@ovh-ux/ng-ovh-api-wrappers@^4.0.4", "@ovh-ux/ng-ovh-api-wrappers@^4.0.7":
   version "4.0.7"
   resolved "https://registry.yarnpkg.com/@ovh-ux/ng-ovh-api-wrappers/-/ng-ovh-api-wrappers-4.0.7.tgz#f07cff3c42ef1c9d1655e2300617528a7d8b2f4f"
   integrity sha512-oylG6ae9LKsUolZK9ORdd6yAu90VRX/45Ss9tZBMlUN7uHeyVMPpdzAJtY0DzgoRTwX++KteOu8bcUj5kTIM4A==
