@@ -87,6 +87,13 @@ const buildStyle = (messages) => {
   }
 `;
 
+  let pathStyle = '';
+  for (let pathIndex = 0; pathIndex < 9; pathIndex += 1) {
+    pathStyle = `${pathStyle}
+    #managerPreloader .logo path:nth-child(${pathIndex +
+      1}) {animation-delay: ${(pathIndex + 1) * 0.2}s; }`;
+  }
+
   return `
   #managerPreloader {
     position: fixed;
@@ -120,6 +127,31 @@ const buildStyle = (messages) => {
 
   #managerPreloader .logo path {
     fill: #0050D7;
+    stroke: #0050D7;
+
+    stroke-width: 0;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 0;
+    fill-opacity: 0;
+    animation: logo 2s linear forwards;
+  }
+
+  ${pathStyle}
+
+  @keyframes logo {
+    0% {
+      stroke-width: 1;
+      stroke-dashoffset: 1200;
+      fill-opacity: 0;
+    }
+    50% {
+      fill-opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      fill-opacity: 1;
+      stroke-width: 0;
+    }
   }
 
   #managerPreloader ul {
