@@ -32,6 +32,7 @@
     "@ovh-ux/manager-filters": "^0.1.0",
     "@ovh-ux/manager-iplb": "^0.3.0",
     "@ovh-ux/manager-models": "^1.0.0",
+    "@ovh-ux/manager-metrics": "^0.0.0 || ^0.1.0",
     "@ovh-ux/manager-nasha": "^0.0.0 || ^1.0.0",
     "@ovh-ux/manager-navbar": "^2.2.0 || ^3.0.0",
     "@ovh-ux/manager-preloader": "^0.0.0 || ^1.0.0",
