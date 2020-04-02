@@ -11,7 +11,7 @@
     "packages/manager/tools/*"
   ],
   "scripts": {
-    "build": "node --experimental-worker scripts/build.js",
+    "build": "cd packages/manager/apps/hub && yarn build",
     "clean": "lerna clean -y && yarn run clean:dist && npx rimraf node_modules",
     "clean:dist": "npx rimraf \"packages/**/dist?(-EU|-CA|-US)\"",
     "generate:app": "sao ./packages/manager/tools/sao-ovh-manager-app",
