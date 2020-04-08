@@ -57,6 +57,7 @@ import dedicatedServerInterfaces from './dedicated/server/interfaces/interfaces.
 import dedicatedServerServers from './dedicated/server/servers/servers.module';
 
 import datacenterBackup from './dedicatedCloud/datacenter/backup';
+import ip from './ip';
 
 Environment.setVersion(__VERSION__);
 
@@ -84,9 +85,9 @@ angular
       errorPage,
       'filters',
       'internationalPhoneNumber',
+      ip,
       'Module.download',
       Environment.getRegion() === 'CA' ? moduleExchange : undefined,
-      'Module.ip',
       'Module.license',
       'Module.otrs',
       ovhManagerMfaEnrollment,
