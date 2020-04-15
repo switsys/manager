@@ -7,6 +7,6 @@ export default {
   bindings: {
     packName: '<',
     serviceName: '<',
-    backState: '<',
+    goBack: '<',
   },
 };

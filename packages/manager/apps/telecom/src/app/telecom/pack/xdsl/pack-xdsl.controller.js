@@ -85,18 +85,16 @@ export default class PackXdslCtrl {
   enableModemIfHaveOne() {
     return this.OvhApiXdslModem.v6()
       .get({ xdslId: this.serviceName })
-      .$promise.then(
-        () => {
-          this.disabledModem = false;
-        },
-        (err) => {
-          if (err.status !== this.noModemStatus) {
-            this.TucToastError(err);
-            return this.$q.reject(err);
-          }
-          return err;
-        },
-      );
+      .$promise.then(() => {
+        this.disabledModem = false;
+      })
+      .catch((err) => {
+        if (err.status !== this.noModemStatus) {
+          this.TucToastError(err);
+          return this.$q.reject(err);
+        }
+        return err;
+      });
   }
 
   updateUIForState(state) {
@@ -172,30 +170,28 @@ export default class PackXdslCtrl {
           description: newAccessDescr,
         },
       )
-      .$promise.then(
-        () => {
-          this.access.description = newAccessDescr;
+      .$promise.then(() => {
+        this.access.description = newAccessDescr;
 
-          // rename in sidebar menu
-          this.SidebarMenu.updateItemDisplay(
-            {
-              title: newAccessDescr || this.access.serviceName,
-            },
-            this.serviceName,
-            'telecom-pack-section',
-            this.packName,
-          );
-        },
-        (error) => {
-          this.TucToast.error(
-            [
-              this.instant('xdsl_rename_error', this.serviceName),
-              error.data.message,
-            ].join(' '),
-          );
-          return this.$q.reject(error);
-        },
-      )
+        // rename in sidebar menu
+        this.SidebarMenu.updateItemDisplay(
+          {
+            title: newAccessDescr || this.access.serviceName,
+          },
+          this.serviceName,
+          'telecom-pack-section',
+          this.packName,
+        );
+      })
+      .catch((error) => {
+        this.TucToast.error(
+          [
+            this.instant('xdsl_rename_error', this.serviceName),
+            error.data.message,
+          ].join(' '),
+        );
+        return this.$q.reject(error);
+      })
       .finally(() => {
         this.loading.save = false;
       });

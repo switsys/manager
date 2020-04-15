@@ -27,7 +27,7 @@ export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('telecom.packs.pack.xdsl', {
     url: '/xdsl/:serviceName/lines/:number',
     views: {
-      'packView@telecom.packs': 'xdsl',
+      'packView@telecom.packs': 'packxdsl',
       'xdslView@telecom.packs.pack.xdsl': {
         controller: 'XdslAccessCtrl',
         controllerAs: 'XdslAccess',
@@ -74,7 +74,7 @@ export default /* @ngInject */ ($stateProvider) => {
             $translate('xdsl_page_title', { name: $stateParams.serviceName }),
           );
       },
-      backState: /* @ngInject */ ($state) => (backState) => {
+      goBack: /* @ngInject */ ($state) => (backState) => {
         $state.go(backState);
       },
     },

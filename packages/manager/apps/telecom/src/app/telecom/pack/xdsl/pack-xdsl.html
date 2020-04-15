@@ -10,7 +10,7 @@
             data-ng-if="!$ctrl.loading.init"
         >
             <oui-back-button
-                data-on-click="::$ctrl.backState($ctrl.content.back.state)"
+                data-on-click="::$ctrl.goBack($ctrl.content.back.state)"
                 data-ng-if="$ctrl.content.back.state && $ctrl.content.status === 'active'"
             >
                 <span
@@ -19,10 +19,6 @@
                     $ctrl.access.accessName }}</span
                 >
             </oui-back-button>
-            <!-- <tuc-section-back-link
-                data-ng-click="$ctrl.backState()"
-                data-tuc-section-back-link-title="{{ $ctrl.pack.general.description || $ctrl.pack.general.packName || $ctrl.access.description || $ctrl.access.accessName }}"
-            ></tuc-section-back-link> -->
             <!-- ACCESS TITLE -->
             <tuc-editable-service-name
                 data-tuc-editable-service-name-title="$ctrl.access.description || $ctrl.access.accessName"
