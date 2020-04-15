@@ -98,7 +98,6 @@ export default class PackXdslCtrl {
   }
 
   updateUIForState(state) {
-    this.currentState = state.name;
     if (this.packName === PACK_XDSL.sdsl) {
       if (
         state.name === 'telecom.packs.pack.xdsl' ||
