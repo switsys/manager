@@ -8,7 +8,7 @@ const moduleName = 'ovhManagerTelecomPackXdsl';
 
 angular
   .module(moduleName, [])
-  .component('packxdsl', component)
+  .component('packXdsl', component)
   .config(routing)
   .run(templates)
   .run(/* @ngTranslationsInject:json ./translations */);
