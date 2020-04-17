@@ -51,8 +51,22 @@ export default /* @ngInject */ ($stateProvider) => {
     resolve: {
       activateZone: /* @ngInject */ ($state) => () =>
         $state.go('app.domain.alldom.zone.activate'),
-      goToZone: /* @ngInject */ ($state) => () =>
-        $state.go('app.domain.alldom.zone'),
+      goToZone: /* @ngInject */ ($state, Alerter) => (
+        message = false,
+        type = 'success',
+      ) => {
+        const reload = message && type === 'success';
+
+        const promise = $state.go('app.domain.alldom.zone', null, {
+          reload,
+        });
+
+        if (message) {
+          promise.then(() => Alerter[type](message, 'domain_alert_main'));
+        }
+
+        return promise;
+      },
     },
   });
 };
