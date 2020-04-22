@@ -53,7 +53,7 @@
     "moment": "^2.20.1",
     "ovh-api-services": "^9.0.0",
     "ovh-ui-angular": "^3.16.1",
-    "ovh-ui-kit": "^2.42.2",
+    "ovh-ui-kit": "^2.42.4",
     "ui-select": "^0.19.8"
   }
 }
