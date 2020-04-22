@@ -7,11 +7,7 @@ import emailproAddAccountCtrl from './account/add/emailpro-account-add.controlle
 import emailproTabAliasCtrl from './account/alias/emailpro-account-alias.controller';
 import emailproAddAccountAliasCtrl from './account/alias/add/emailpro-add-account-alias.controller';
 import emailproRemoveAliasCtrl from './account/alias/remove/emailpro-remove-account-alias.controller';
-import emailproTabGroupAliasCtrl from './account/alias/group/emailpro-group-alias.controller';
-import emailproAddGroupAliasCtrl from './account/alias/group/emailpro-add-group-alias.controller';
-import emailproRemoveGroupAliasCtrl from './account/alias/group/emailpro-remove-group-alias.controller';
 import emailproAccountDelegationCtrl from './account/delegation/emailpro-account-delegation.controller';
-import emailproMailingListDelegationCtrl from './account/delegation/emailpro-account-mailing-list-delegation.controller';
 import emailproDelegationSettingsCtrl from './account/delegation/setting/emailpro-account-delegation-setting.controller';
 import emailproOrderAccountCtrl from './account/order/emailpro-account-order.controller';
 import emailproRemoveAccountCtrl from './account/remove/emailpro-account-remove.controller';
@@ -70,14 +66,7 @@ angular
   .controller('EmailProAddAccountAliasCtrl', emailproAddAccountAliasCtrl)
   .controller('EmailProTabAliasCtrl', emailproTabAliasCtrl)
   .controller('EmailProRemoveAliasCtrl', emailproRemoveAliasCtrl)
-  .controller('EmailProTabGroupAliasCtrl', emailproTabGroupAliasCtrl)
-  .controller('EmailProAddGroupAliasCtrl', emailproAddGroupAliasCtrl)
-  .controller('EmailProRemoveGroupAliasCtrl', emailproRemoveGroupAliasCtrl)
   .controller('EmailProAccountDelegationCtrl', emailproAccountDelegationCtrl)
-  .controller(
-    'EmailProMailingListDelegationCtrl',
-    emailproMailingListDelegationCtrl,
-  )
   .controller('EmailProDelegationSettingsCtrl', emailproDelegationSettingsCtrl)
   .controller('EmailProOrderAccountCtrl', emailproOrderAccountCtrl)
   .controller('EmailProRemoveAccountCtrl', emailproRemoveAccountCtrl)

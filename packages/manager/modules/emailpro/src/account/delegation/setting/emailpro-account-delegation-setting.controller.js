@@ -65,32 +65,6 @@ export default /* @ngInject */ function(
     return false;
   };
 
-  $scope.getDelegationRight = function getDelegationRight(count, offset) {
-    $scope.setMessage(null);
-    $scope.loading = true;
-
-    EmailPro.getDelegationRight(
-      $scope.selectedAccount.primaryEmailAddress,
-      count,
-      offset,
-      $scope.form.search,
-    )
-      .then((accounts) => {
-        $scope.loading = false;
-        // keep the original data as a reference point to compare changes
-        $scope.bufferAccounts = accounts;
-        // make a deep copy of accounts list to use it as model
-        $scope.delegationList = angular.copy(accounts);
-      })
-      .catch((failure) => {
-        $scope.loading = false;
-        $scope.setMessage(
-          $translate.instant('emailpro_tab_ACCOUNTS_error_message'),
-          failure.data,
-        );
-      });
-  };
-
   $scope.$watch(
     'form.search',
     (search) => {
