@@ -28,9 +28,12 @@ export default /* @ngInject */ ($stateProvider) => {
     resolve: {
       associatedHostings: /* @ngInject */ (Domain, domainName) =>
         Domain.getAssociatedHosting(domainName),
+      allDomInfos: () => null,
       currentSection: () => 'domain',
       domain: /* @ngInject */ (Domain, domainName) =>
         Domain.getSelected(domainName),
+      domainInfos: /* @ngInject */ (Domain, domainName) =>
+        Domain.getServiceInfo(domainName),
       domainName: /* @ngInject */ ($transition$) =>
         $transition$.params().productId,
       goToWebhostingOrder: /* @ngInject */ ($state) => () =>
@@ -80,6 +83,8 @@ export default /* @ngInject */ ($stateProvider) => {
     redirectTo: 'app.domain.alldom.information',
     resolve: {
       allDom: /* @ngInject */ ($transition$) => $transition$.params().allDom,
+      allDomInfos: /* @ngInject */ (allDom, WucAllDom) =>
+        WucAllDom.getServiceInfos(allDom),
       associatedHostings: /* @ngInject */ (Domain, domainName) =>
         Domain.getAssociatedHosting(domainName),
       currentSection: () => 'domain',
@@ -87,6 +92,8 @@ export default /* @ngInject */ ($stateProvider) => {
         Domain.getSelected(domainName),
       domainName: /* @ngInject */ ($transition$) =>
         $transition$.params().productId,
+      domainInfos: /* @ngInject */ (Domain, domainName) =>
+        Domain.getServiceInfo(domainName),
       goToWebhostingOrder: /* @ngInject */ ($state) => () =>
         $state.go('app.domain.alldom.webhosting.order'),
       navigationInformations: [
