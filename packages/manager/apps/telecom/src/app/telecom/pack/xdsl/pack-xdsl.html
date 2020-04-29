@@ -14,10 +14,10 @@
                 data-ng-if="$ctrl.content.back.state && $ctrl.content.status === 'active'"
             >
                 <span
-                    >{{ $ctrl.pack.general.description ||
-                    $ctrl.pack.general.packName || $ctrl.access.description ||
-                    $ctrl.access.accessName }}</span
-                >
+                    data-ng-bind="$ctrl.pack.general.description ||
+                $ctrl.pack.general.packName || $ctrl.access.description ||
+                $ctrl.access.accessName"
+                ></span>
             </oui-back-button>
             <!-- ACCESS TITLE -->
             <tuc-editable-service-name
