@@ -1,3 +1,47 @@
+# [1.2.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-hub-app@1.1.4...@ovh-ux/manager-hub-app@1.2.0) (2020-04-28)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 356] ([d2ae13f](https://github.com/ovh/manager/commit/d2ae13f6679c081a2514a9dafad4955265a4d9bd))
+* **i18n:** add missing translations [CDS 357] ([409dc06](https://github.com/ovh/manager/commit/409dc06ae0fc802fe23b859a037347d60908fe4e))
+
+
+### Features
+
+* add skip nav functionality ([#2849](https://github.com/ovh/manager/issues/2849)) ([5d1d8df](https://github.com/ovh/manager/commit/5d1d8df3428595032a37d58bb5b41a9fb1eff95e))
+* **catalog:** add tracking ([#2724](https://github.com/ovh/manager/issues/2724)) ([4c04c0d](https://github.com/ovh/manager/commit/4c04c0d93829a01b957bdfa7af8c6e5436521264))
+* **products:** update navigation tracking ([80676e9](https://github.com/ovh/manager/commit/80676e9d1c48575f5bed89de558bf910381f4a28))
+
+
+
+## [1.1.4](https://github.com/ovh/manager/compare/@ovh-ux/manager-hub-app@1.1.3...@ovh-ux/manager-hub-app@1.1.4) (2020-04-20)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 357] ([#2811](https://github.com/ovh/manager/issues/2811)) ([953c51b](https://github.com/ovh/manager/commit/953c51b39eee04c2b2be61269a4948a1f1b50a51))
+
+
+
+## [1.1.3](https://github.com/ovh/manager/compare/@ovh-ux/manager-hub-app@1.1.2...@ovh-ux/manager-hub-app@1.1.3) (2020-04-16)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 345] ([4a0673e](https://github.com/ovh/manager/commit/4a0673e9627b44076e7d9f641060a04a705be0bc))
+
+
+
+## [1.1.2](https://github.com/ovh/manager/compare/@ovh-ux/manager-hub-app@1.1.1...@ovh-ux/manager-hub-app@1.1.2) (2020-04-15)
+
+
+### Performance Improvements
+
+* import dynamically moment locales ([#2755](https://github.com/ovh/manager/issues/2755)) ([5f3320d](https://github.com/ovh/manager/commit/5f3320d92802a1f4a6d65baf60f74917b8e58f4a))
+
+
+
 ## [1.1.1](https://github.com/ovh/manager/compare/@ovh-ux/manager-hub-app@1.1.0...@ovh-ux/manager-hub-app@1.1.1) (2020-04-08)
 
 

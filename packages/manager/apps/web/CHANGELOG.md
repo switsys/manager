@@ -1,3 +1,34 @@
+# [14.2.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-web@14.1.0...@ovh-ux/manager-web@14.2.0) (2020-04-28)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 356] ([d2ae13f](https://github.com/ovh/manager/commit/d2ae13f6679c081a2514a9dafad4955265a4d9bd))
+* **i18n:** add missing translations [CDS 368] ([d6f6809](https://github.com/ovh/manager/commit/d6f6809ea899cfbd3118f1ee242e0ccc4db7ee8e))
+* **i18n:** add missing translations [CDS 369] ([38691ec](https://github.com/ovh/manager/commit/38691eccb391af0d2c9e7b700bdfd2839ef3da85))
+
+
+### Features
+
+* update dns zone standalone order ([16b5fd7](https://github.com/ovh/manager/commit/16b5fd75bc2622574a0dadd8b613031fe5b7ef77))
+
+
+
+# [14.1.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-web@14.0.2...@ovh-ux/manager-web@14.1.0) (2020-04-15)
+
+
+### Features
+
+* **emailpro:** lazy load emailpro root state ([f46535f](https://github.com/ovh/manager/commit/f46535f79d8881f6a42599091ffddb6e7288f4b6))
+* **exchange:** lazy load exchange root state ([63e6bbb](https://github.com/ovh/manager/commit/63e6bbb23b14ea820d0f50500db9b881d12775a6))
+
+
+### Performance Improvements
+
+* import dynamically moment locales ([#2755](https://github.com/ovh/manager/issues/2755)) ([5f3320d](https://github.com/ovh/manager/commit/5f3320d92802a1f4a6d65baf60f74917b8e58f4a))
+
+
+
 ## [14.0.2](https://github.com/ovh/manager/compare/@ovh-ux/manager-web@14.0.1...@ovh-ux/manager-web@14.0.2) (2020-04-01)
 
 

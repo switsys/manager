@@ -1,3 +1,59 @@
+## [3.1.5](https://github.com/ovh/manager/compare/@ovh-ux/manager-navbar@3.1.4...@ovh-ux/manager-navbar@3.1.5) (2020-04-28)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 356] ([d2ae13f](https://github.com/ovh/manager/commit/d2ae13f6679c081a2514a9dafad4955265a4d9bd))
+* **i18n:** add missing translations [CDS 357] ([409dc06](https://github.com/ovh/manager/commit/409dc06ae0fc802fe23b859a037347d60908fe4e))
+* **i18n:** add missing translations [CDS 363] ([7744b56](https://github.com/ovh/manager/commit/7744b566803e45dd7863d43b21764b5a935fd52f))
+* **i18n:** add missing translations [CDS 368] ([d6f6809](https://github.com/ovh/manager/commit/d6f6809ea899cfbd3118f1ee242e0ccc4db7ee8e))
+
+
+
+## [3.1.4](https://github.com/ovh/manager/compare/@ovh-ux/manager-navbar@3.1.3...@ovh-ux/manager-navbar@3.1.4) (2020-04-21)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 363] ([33e18d9](https://github.com/ovh/manager/commit/33e18d9ca00a9428eaf70f76ea2adc92c32891d6))
+
+
+
+## [3.1.3](https://github.com/ovh/manager/compare/@ovh-ux/manager-navbar@3.1.2...@ovh-ux/manager-navbar@3.1.3) (2020-04-20)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 357] ([#2811](https://github.com/ovh/manager/issues/2811)) ([953c51b](https://github.com/ovh/manager/commit/953c51b39eee04c2b2be61269a4948a1f1b50a51))
+
+
+
+## [3.1.2](https://github.com/ovh/manager/compare/@ovh-ux/manager-navbar@3.1.1...@ovh-ux/manager-navbar@3.1.2) (2020-04-16)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 335] ([eae91e9](https://github.com/ovh/manager/commit/eae91e9fbf779b3c6e0a34066725d42df764639a))
+* **i18n:** add missing translations [CDS 351] ([c76b783](https://github.com/ovh/manager/commit/c76b783ee6ef33f08cb22361ef45eb583cff3221))
+* **i18n:** add missing translations [CDS 353] ([dd57828](https://github.com/ovh/manager/commit/dd578281ceaa43df230eb4e78aa264f78c57827b))
+* prevent override of background-color ([#2758](https://github.com/ovh/manager/issues/2758)) ([3c1c862](https://github.com/ovh/manager/commit/3c1c8625080a1a4751948d758a192ba4c8d7b341))
+
+
+
+## [3.1.1](https://github.com/ovh/manager/compare/@ovh-ux/manager-navbar@3.1.0...@ovh-ux/manager-navbar@3.1.1) (2020-04-15)
+
+
+### Bug Fixes
+
+* **notifications-menu:** force to display block ([#2775](https://github.com/ovh/manager/issues/2775)) ([a52f616](https://github.com/ovh/manager/commit/a52f6168fd52eba74c24fcb4afaaa022704dbf2d))
+
+
+### Performance Improvements
+
+* import dynamically moment locales ([#2755](https://github.com/ovh/manager/issues/2755)) ([5f3320d](https://github.com/ovh/manager/commit/5f3320d92802a1f4a6d65baf60f74917b8e58f4a))
+
+
+
 # [3.1.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-navbar@3.0.1...@ovh-ux/manager-navbar@3.1.0) (2020-04-08)
 
 

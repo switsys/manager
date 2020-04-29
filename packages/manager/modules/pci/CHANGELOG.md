@@ -1,3 +1,76 @@
+# [3.19.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.18.3...@ovh-ux/manager-pci@3.19.0) (2020-04-29)
+
+
+### Features
+
+* **pci.projects.data.processing:** add auto computation of memory overhead ([#2841](https://github.com/ovh/manager/issues/2841)) ([1499d96](https://github.com/ovh/manager/commit/1499d963dce71a0c63f99129bf60d784444bedc2))
+
+
+
+## [3.18.3](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.18.2...@ovh-ux/manager-pci@3.18.3) (2020-04-28)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 356] ([d2ae13f](https://github.com/ovh/manager/commit/d2ae13f6679c081a2514a9dafad4955265a4d9bd))
+* **i18n:** add missing translations [CDS 357] ([409dc06](https://github.com/ovh/manager/commit/409dc06ae0fc802fe23b859a037347d60908fe4e))
+* **i18n:** add missing translations [CDS 358] ([a12d735](https://github.com/ovh/manager/commit/a12d735230a39a6a85f182a9dbc046f85bde211d))
+* **i18n:** add missing translations [CDS 362] ([2fcb068](https://github.com/ovh/manager/commit/2fcb0687ab2079f54a17cf06fe2ab0867b490e64))
+* **i18n:** add missing translations [CDS 363] ([7744b56](https://github.com/ovh/manager/commit/7744b566803e45dd7863d43b21764b5a935fd52f))
+* **i18n:** add missing translations [CDS 368] ([d6f6809](https://github.com/ovh/manager/commit/d6f6809ea899cfbd3118f1ee242e0ccc4db7ee8e))
+* **i18n:** add missing translations [CDS 369] ([38691ec](https://github.com/ovh/manager/commit/38691eccb391af0d2c9e7b700bdfd2839ef3da85))
+* **i18n:** add missing translations [CDS 370] ([10ae7f8](https://github.com/ovh/manager/commit/10ae7f8ed9db50f9596dfbf334113ce4006dfd9d))
+* **i18n:** add missing translations [CDS 372] ([ccbb995](https://github.com/ovh/manager/commit/ccbb995cbf8fd400f841297a8377d07f7d914c6c))
+* **i18n:** add missing translations [CDS 374] ([1203523](https://github.com/ovh/manager/commit/1203523a6b7e6d27f4ce72a8d36f69a923c03f69))
+
+
+
+## [3.18.2](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.18.1...@ovh-ux/manager-pci@3.18.2) (2020-04-21)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 363] ([33e18d9](https://github.com/ovh/manager/commit/33e18d9ca00a9428eaf70f76ea2adc92c32891d6))
+
+
+
+## [3.18.1](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.18.0...@ovh-ux/manager-pci@3.18.1) (2020-04-20)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 357] ([#2811](https://github.com/ovh/manager/issues/2811)) ([953c51b](https://github.com/ovh/manager/commit/953c51b39eee04c2b2be61269a4948a1f1b50a51))
+
+
+
+# [3.18.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.17.1...@ovh-ux/manager-pci@3.18.0) (2020-04-16)
+
+
+### Bug Fixes
+
+* **i18n:** add missing translations [CDS 335] ([eae91e9](https://github.com/ovh/manager/commit/eae91e9fbf779b3c6e0a34066725d42df764639a))
+* **i18n:** add missing translations [CDS 338] ([ce7c630](https://github.com/ovh/manager/commit/ce7c630ccb50b1dc4535756b392947adbbf4c62a))
+* **i18n:** add missing translations [CDS 340] ([d9355bb](https://github.com/ovh/manager/commit/d9355bb0179b8673c4a00109899993341ed01fa2))
+* **i18n:** add missing translations [CDS 351] ([c76b783](https://github.com/ovh/manager/commit/c76b783ee6ef33f08cb22361ef45eb583cff3221))
+* **i18n:** add missing translations [CDS 353] ([dd57828](https://github.com/ovh/manager/commit/dd578281ceaa43df230eb4e78aa264f78c57827b))
+* **private-registry.create:** fix wrong translation in create page ([#2717](https://github.com/ovh/manager/issues/2717)) ([ca7a268](https://github.com/ovh/manager/commit/ca7a2688ab5e6b96bafc3aacfa6a932013ae3b92))
+
+
+### Features
+
+* **pci.quota:** request quota increase in-app ([#2664](https://github.com/ovh/manager/issues/2664)) ([3f45937](https://github.com/ovh/manager/commit/3f459371834023e6ffd1f3e3b32f2b54431e400f))
+
+
+
+## [3.17.1](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.17.0...@ovh-ux/manager-pci@3.17.1) (2020-04-15)
+
+
+### Performance Improvements
+
+* import dynamically moment locales ([#2755](https://github.com/ovh/manager/issues/2755)) ([5f3320d](https://github.com/ovh/manager/commit/5f3320d92802a1f4a6d65baf60f74917b8e58f4a))
+
+
+
 # [3.17.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-pci@3.16.0...@ovh-ux/manager-pci@3.17.0) (2020-04-10)
 
 

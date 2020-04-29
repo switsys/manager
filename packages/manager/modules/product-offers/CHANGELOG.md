@@ -1,3 +1,26 @@
+# [1.1.0](https://github.com/ovh/manager/compare/@ovh-ux/manager-product-offers@1.0.4...@ovh-ux/manager-product-offers@1.1.0) (2020-04-28)
+
+
+### Bug Fixes
+
+* display text depending on price ([7ea01d1](https://github.com/ovh/manager/commit/7ea01d1c2b922b7847bcd3bf23aa02abde061621))
+
+
+### Features
+
+* update dns zone standalone order ([16b5fd7](https://github.com/ovh/manager/commit/16b5fd75bc2622574a0dadd8b613031fe5b7ef77))
+
+
+
+## [1.0.4](https://github.com/ovh/manager/compare/@ovh-ux/manager-product-offers@1.0.3...@ovh-ux/manager-product-offers@1.0.4) (2020-04-15)
+
+
+### Performance Improvements
+
+* import dynamically moment locales ([#2755](https://github.com/ovh/manager/issues/2755)) ([5f3320d](https://github.com/ovh/manager/commit/5f3320d92802a1f4a6d65baf60f74917b8e58f4a))
+
+
+
 ## [1.0.3](https://github.com/ovh/manager/compare/@ovh-ux/manager-product-offers@1.0.2...@ovh-ux/manager-product-offers@1.0.3) (2020-04-01)
 
 
