@@ -539,13 +539,13 @@
                         </dl>
                         <div
                             class="oui-tile__actions"
-                            data-ng-if="dedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired"
+                            data-ng-if="DedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired"
                         >
                             <oui-action-menu
                                 aria-label="{{:: 'menu_action_label' | translate:{t0: ('server_bandwidth_ovh_to_internet' | translate)} }}"
                                 data-align="end"
                                 data-compact
-                                data-ng-if="dedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired"
+                                data-ng-if="DedicatedServerFeatureAvailability.hasContactChangement() && !server.isExpired"
                             >
                                 <oui-action-menu-item
                                     data-text="{{:: 'contacts_management' | translate }}"
@@ -856,6 +856,26 @@
                         </oui-tile-description>
                     </oui-tile-definition>
                 </div>
+            </oui-tile>
+        </div>
+
+        <div class="col-md-4" data-ng-if="!server.isExpired">
+            <!-- Network -->
+            <oui-tile
+                class="mb-5 h-100"
+                data-heading="Fonctionnalités avancées"
+            >
+                <oui-tile-definition
+                    term="Intel SGX (Software Guard Extensions)"
+                >
+                    <oui-tile-description>
+                        <a></a>
+                    </oui-tile-description>
+                </oui-tile-definition>
+
+                <oui-tile-button data-href="ovh.com">
+                    Commander l'option SGX
+                </oui-tile-button>
             </oui-tile>
         </div>
     </div>

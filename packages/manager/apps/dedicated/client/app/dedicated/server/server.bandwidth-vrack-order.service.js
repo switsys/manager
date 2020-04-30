@@ -1,9 +1,10 @@
-/* eslint-disable max-classes-per-file */
 import map from 'lodash/map';
 
-class BaseDedicatedService {
-  constructor($q) {
+export default class {
+  constructor($q, $translate, Server) {
     this.$q = $q;
+    this.$translate = $translate;
+    this.Server = Server;
   }
 
   acceptResponse(data, message) {
@@ -21,22 +22,14 @@ class BaseDedicatedService {
       message,
     });
   }
-}
-
-class BandwidthVrackOrderService extends BaseDedicatedService {
-  constructor($q, $translate, Server) {
-    super($q);
-    this.$translate = $translate;
-    this.Server = Server;
-  }
 
   getOrderableBandwidths(productId) {
     return this.Server.getOrderables(productId, 'bandwidthvRack')
       .then((response) =>
-        super.acceptResponse(this.transformOrderableBandwidths(response.vrack)),
+        this.acceptResponse(this.transformOrderableBandwidths(response.vrack)),
       )
       .catch((response) =>
-        super.rejectResponse(
+        this.rejectResponse(
           response.data,
           this.$translate.instant('server_order_bandwidth_vrack_loading_error'),
         ),
@@ -50,9 +43,9 @@ class BandwidthVrackOrderService extends BaseDedicatedService {
         bandwidth,
       },
     })
-      .then((response) => super.acceptResponse(response))
+      .then((response) => this.acceptResponse(response))
       .catch((response) =>
-        super.rejectResponse(
+        this.rejectResponse(
           response.data,
           this.$translate.instant('server_order_bandwidth_vrack_loading_error'),
         ),
@@ -67,9 +60,9 @@ class BandwidthVrackOrderService extends BaseDedicatedService {
         bandwidth,
       },
     })
-      .then((response) => super.acceptResponse(response))
+      .then((response) => this.acceptResponse(response))
       .catch((response) =>
-        super.rejectResponse(
+        this.rejectResponse(
           response.data,
           this.$translate.instant('server_order_bandwidth_vrack_error'),
         ),
@@ -79,7 +72,7 @@ class BandwidthVrackOrderService extends BaseDedicatedService {
   cancelBandwidthOption(productId) {
     return this.Server.cancelOption(productId, 'BANDWIDTH_VRACK')
       .then((response) =>
-        super.acceptResponse(
+        this.acceptResponse(
           response,
           this.$translate.instant(
             'server_cancel_bandwidth_vrack_cancel_success',
@@ -87,7 +80,7 @@ class BandwidthVrackOrderService extends BaseDedicatedService {
         ),
       )
       .catch((response) =>
-        super.rejectResponse(
+        this.rejectResponse(
           response.data,
           this.$translate.instant('server_cancel_bandwidth_cancel_vrack_error'),
         ),
@@ -104,8 +97,3 @@ class BandwidthVrackOrderService extends BaseDedicatedService {
     }));
   }
 }
-
-angular
-  .module('services')
-  .service('BandwidthVrackOrderService', BandwidthVrackOrderService);
-/* eslint-enable max-classes-per-file */

@@ -47,14 +47,11 @@ import config from './config/config';
 import contactsService from './account/contacts/service/contacts-service.module';
 import dedicatedCloudDatacenterDrp from './dedicatedCloud/datacenter/drp';
 import dedicatedCloudDatacenterDashboardDeleteDrp from './dedicatedCloud/datacenter/dashboard/deleteDrp';
+import dedicatedServer from './dedicated/server';
 import dedicatedUniverseComponents from './dedicatedUniverseComponents';
 import errorPage from './error';
 import ovhManagerPccDashboard from './dedicatedCloud/dashboard';
 import ovhManagerPccResourceUpgrade from './dedicatedCloud/resource/upgrade';
-
-import dedicatedServerBandwidth from './dedicated/server/bandwidth/bandwidth.module';
-import dedicatedServerInterfaces from './dedicated/server/interfaces/interfaces.module';
-import dedicatedServerServers from './dedicated/server/servers/servers.module';
 
 Environment.setVersion(__VERSION__);
 
@@ -72,10 +69,8 @@ angular
       'controllers',
       contactsService,
       dedicatedCloudDatacenterDrp,
-      dedicatedServerBandwidth,
-      dedicatedServerInterfaces,
       dedicatedCloudDatacenterDashboardDeleteDrp,
-      dedicatedServerServers,
+      dedicatedServer,
       dedicatedUniverseComponents,
       'directives',
       errorPage,

@@ -1,13 +1,11 @@
 import Ola from './interfaces/ola.class';
 
-angular.module('App').config(($stateProvider) => {
+export default /* @ngInject */ ($stateProvider) => {
   $stateProvider.state('app.dedicated.server', {
     url: '/configuration/server/:productId',
-    templateUrl: 'dedicated/server/dedicated-server.html',
-    controller: 'ServerCtrl',
-    reloadOnSearch: false,
-    translations: { value: ['.'], format: 'json' },
+    abstract: true,
     redirectTo: 'app.dedicated.server.dashboard',
+    component: 'dedicatedServer',
     resolve: {
       bandwidthOption: /* @ngInject */ (Server, serverName) =>
         Server.getBandwidthOption(serverName),
@@ -79,4 +77,4 @@ angular.module('App').config(($stateProvider) => {
         }),
     },
   });
-});
+};
