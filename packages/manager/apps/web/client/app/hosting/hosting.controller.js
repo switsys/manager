@@ -11,6 +11,7 @@ import remove from 'lodash/remove';
 import set from 'lodash/set';
 import some from 'lodash/some';
 import union from 'lodash/union';
+import { Environment } from '@ovh-ux/manager-config';
 
 export default class {
   /* @ngInject */
@@ -469,11 +470,19 @@ export default class {
         });
 
         if (!hosting.isCloudWeb) {
-          this.tabMenu.items.push({
-            label: this.$translate.instant('hosting_tab_menu_emails'),
-            target: `#/configuration/email-domain/${this.$stateParams.productId}?tab=MAILING_LIST`,
-            type: 'LINK',
-          });
+          if (Environment.getRegion() === 'EU') {
+            this.tabMenu.items.push({
+              label: this.$translate.instant('hosting_tab_menu_emails'),
+              target: `#/configuration/email-domain/${this.$stateParams.productId}?tab=MAILING_LIST`,
+              type: 'LINK',
+            });
+          } else {
+            this.tabMenu.items.push({
+              label: this.$translate.instant('hosting_tab_menu_emails'),
+              target: `#/configuration/email-mxplan/${this.$stateParams.productId}?tab=INFORMATION`,
+              type: 'LINK',
+            });
+          }
         }
       });
   }
