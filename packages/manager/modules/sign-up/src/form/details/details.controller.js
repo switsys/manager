@@ -135,6 +135,15 @@ export default class SignUpDetailsCtrl {
     inputField.$setValidity('pattern', inputModelValid);
   }
 
+  preselectLanguage() {
+    if (get(this.signUpFormCtrl, 'rules.language.in.length', 0) === 1) {
+      const [uniqueLanguage] = this.signUpFormCtrl.rules.language.in;
+      this.signUpFormCtrl.model.language = uniqueLanguage.value;
+    } else {
+      this.signUpFormCtrl.model.language = null;
+    }
+  }
+
   /* -----  End of Helpers  ------ */
 
   /* =============================
@@ -160,6 +169,7 @@ export default class SignUpDetailsCtrl {
         this.signUpFormCtrl.model.phoneCountry = this.signUpFormCtrl.model.country;
       }
 
+      this.preselectLanguage();
       this.constructor.setInputValidity('zip', this.formCtrl);
       this.setElementFocus('zip');
     });
@@ -222,6 +232,8 @@ export default class SignUpDetailsCtrl {
         this.onPhoneCountryChange.bind(this),
       );
     }
+
+    this.preselectLanguage();
   }
 
   /* -----  End of Hooks  ------ */
