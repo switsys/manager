@@ -115,6 +115,26 @@ export default class SignUpDetailsCtrl {
     return zipCode;
   }
 
+  static setInputValidity(inputFormName, form) {
+    const inputField = form[inputFormName];
+
+    if (!inputField) {
+      throw new Error(
+        `Sign up form account: Input ${inputFormName} not found in the form`,
+      );
+    }
+
+    const inputModelValue = inputField.$modelValue;
+    const inputViewValue = inputField.$viewValue;
+
+    const inputModelValid = inputField.$validators.pattern(
+      inputModelValue,
+      inputViewValue,
+    );
+
+    inputField.$setValidity('pattern', inputModelValid);
+  }
+
   /* -----  End of Helpers  ------ */
 
   /* =============================
@@ -139,6 +159,9 @@ export default class SignUpDetailsCtrl {
       if (this.canChangePhoneCountry()) {
         this.signUpFormCtrl.model.phoneCountry = this.signUpFormCtrl.model.country;
       }
+
+      this.constructor.setInputValidity('zip', this.formCtrl);
+      this.setElementFocus('zip');
     });
   }
 
@@ -151,14 +174,7 @@ export default class SignUpDetailsCtrl {
       // When phone country change, the pattern change too.
       // But... the validation is not done automatically.
       // So... be sure that the phone validation is done.
-      const phoneModel = this.formCtrl.phone;
-      const modelValue = phoneModel.$modelValue;
-      const viewValue = phoneModel.$viewValue;
-      const phoneModelValid = phoneModel.$validators.pattern(
-        modelValue,
-        viewValue,
-      );
-      phoneModel.$setValidity('pattern', phoneModelValid);
+      this.constructor.setInputValidity('phone', this.formCtrl);
     });
   }
 
