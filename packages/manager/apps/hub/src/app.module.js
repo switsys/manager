@@ -1,7 +1,9 @@
 import 'script-loader!moment/min/moment.min.js'; //eslint-disable-line
 
 import { Environment } from '@ovh-ux/manager-config';
+import 'angular-ui-bootstrap';
 import angular from 'angular';
+import 'angular-animate';
 import 'angular-translate';
 import uiRouter, { RejectType } from '@uirouter/angularjs';
 import ngOvhUiRouterLineProgress from '@ovh-ux/ng-ui-router-line-progress';
@@ -14,6 +16,7 @@ import ovhManagerCore from '@ovh-ux/manager-core';
 import ovhManagerHub from '@ovh-ux/manager-hub';
 import ovhManagerNavbar from '@ovh-ux/manager-navbar';
 import ovhManagerOrderTracking from '@ovh-ux/ng-ovh-order-tracking';
+import ngOvhSsoAuthModalPlugin from '@ovh-ux/ng-ovh-sso-auth-modal-plugin';
 import { detach as detachPreloader } from '@ovh-ux/manager-preloader';
 
 import get from 'lodash/get';
@@ -28,6 +31,7 @@ import { BILLING_REDIRECTIONS } from './constants';
 import controller from './controller';
 import routing from './routing';
 import 'ovh-ui-kit/dist/oui.css';
+import 'ovh-ui-kit-bs/dist/ovh-ui-kit-bs.css';
 import './index.less';
 import './index.scss';
 
@@ -42,6 +46,8 @@ angular
       atInternet,
       dashboard,
       errorPage,
+      'ngAnimate',
+      ngOvhSsoAuthModalPlugin,
       ngOvhUiRouterLineProgress,
       ngUiRouterBreadcrumb,
       'oui',
@@ -50,6 +56,7 @@ angular
       ovhManagerNavbar,
       ovhManagerOrderTracking,
       'pascalprecht.translate',
+      'ui.bootstrap',
       uiRouter,
       ...get(__NG_APP_INJECTIONS__, Environment.getRegion(), []),
     ].filter(isString),
