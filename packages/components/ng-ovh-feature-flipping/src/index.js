@@ -2,7 +2,7 @@ import angular from 'angular';
 
 import provider from './provider';
 
-const moduleName = 'ngOvhFatureFlipping';
+const moduleName = 'ngOvhFeatureFlipping';
 
 angular.module(moduleName, []).provider('featureFlipping', provider);
 

@@ -19,7 +19,6 @@ if (process.env.BUILD === 'production') {
       output: {
         globals: {
           angular: 'angular',
-          jquery: '$',
         },
       },
     }),
