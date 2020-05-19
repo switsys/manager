@@ -38,6 +38,6 @@
     "@ovh-ux/component-rollup-config": "^7.0.0"
   },
   "peerDependencies": {
-    "angular": "~1.6"
+    "angular": "^1.7"
   }
 }
