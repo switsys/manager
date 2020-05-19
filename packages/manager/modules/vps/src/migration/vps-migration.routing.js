@@ -11,14 +11,10 @@ export default /* @ngInject */ ($stateProvider) => {
     },
     resolve: {
       user: /* @ngInject */ (OvhApiMe) => OvhApiMe.v6().get().$promise,
-      vpsList: /* @ngInject */ (VpsMigrationService) =>
-        VpsMigrationService.getVpsList(),
-      faqLink: /* @ngInject */ ($translate, coreConfig) =>
-        get(
-          FAQ_LINK,
-          `${coreConfig.getRegion()}.${$translate.use()}`,
-          get(FAQ_LINK, `${coreConfig.getRegion()}.default`),
-        ),
+      vpsList: /* @ngInject */ (catalog, VpsMigrationService) =>
+        VpsMigrationService.getVpsList(catalog),
+      faqLink: /* @ngInject */ (user) =>
+        get(FAQ_LINK, user.ovhSubsidiary, FAQ_LINK.WORLD),
       getMigrationDetails: /* @ngInject */ (catalog, VpsMigrationService) => (
         serviceName,
       ) => VpsMigrationService.getMigrationDetails(serviceName, catalog),
