@@ -1,4 +1,5 @@
 import Postmate from 'postmate';
+import messages from './constants';
 
 const handshake = new Postmate.Model({
   updateHash: (hash) => {
@@ -10,25 +11,23 @@ const handshake = new Postmate.Model({
 
 handshake.then((parent) => {
   window.addEventListener('hashchange', () => {
-    parent.emit('ovh.navigation.hashChange', window.location.hash);
+    parent.emit(messages.hashChange, window.location.hash);
   });
-  // init hash
-  parent.emit('ovh.navigation.hashChange', window.location.hash);
 });
 
-const uFrontendApi = {
+const api = {
   login: (url) =>
     handshake.then((parent) => {
-      parent.emit('ovh.session.login', url);
+      parent.emit(messages.login, url);
     }),
   logout: () =>
     handshake.then((parent) => {
-      parent.emit('ovh.session.logout');
+      parent.emit(messages.logout);
     }),
   sessionSwitch: () =>
     handshake.then((parent) => {
-      parent.emit('ovh.session.switch');
+      parent.emit(messages.sessionSwitch);
     }),
 };
 
-export default uFrontendApi;
+export { api, messages };
