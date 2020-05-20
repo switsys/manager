@@ -1,3 +1,4 @@
+import get from 'lodash/get';
 import Workflow from './product-offers-workflow.class';
 
 /**
@@ -10,7 +11,7 @@ export default class ServicesWorkflow extends Workflow {
    * @param {Object} workflowOptions Specific options
    * for this workflow, must contains the following values:
    * - {serviceId}: Id of the service on which to detach an option
-   * - {detachPlancode}: Item representing the option to detach
+   * - {detachPlancodes}: Item representing the option to detach
    * - {durationToUse}: Duration to use, will override the default pricing
    * duration.
    * @param {Object} DetachService   Service to handle request to perform a
@@ -81,7 +82,9 @@ export default class ServicesWorkflow extends Workflow {
   validateOffer() {
     this.updateLoadingStatus('validateOffer');
 
-    const autoPayWithPreferredPaymentMethod = !!this.defaultPaymentMethod;
+    const autoPayWithPreferredPaymentMethod =
+      !!this.defaultPaymentMethod || this.isFreePricing();
+
     let detachResult;
 
     this.validationParameters.autoPayWithPreferredPaymentMethod = autoPayWithPreferredPaymentMethod;
@@ -93,7 +96,7 @@ export default class ServicesWorkflow extends Workflow {
 
         return autoPayWithPreferredPaymentMethod
           ? this.workflowService.payDetach(
-              detachResult.orderId,
+              detachResult,
               this.defaultPaymentMethod,
             )
           : this.$q.when();
@@ -105,7 +108,10 @@ export default class ServicesWorkflow extends Workflow {
         };
 
         if (autoPayWithPreferredPaymentMethod) {
-          validatedDetach.paymentMethodLabel = this.defaultPaymentMethod.label;
+          validatedDetach.paymentMethodLabel = get(
+            this.defaultPaymentMethod,
+            'label',
+          );
         }
 
         this.onSuccess({
