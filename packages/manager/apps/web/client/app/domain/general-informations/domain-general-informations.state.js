@@ -9,7 +9,31 @@ const commonResolves = {
       productName: 'domain',
       serviceName: domainName,
     }).$promise,
+  detachableStart10m: /* @ngInject */ (
+    Hosting,
+    ovhManagerProductOffersDetachService,
+    start10mHosting,
+  ) =>
+    start10mHosting
+      ? Hosting.getServiceInfos(start10mHosting.serviceName)
+          .then((start10mHostingInfo) =>
+            start10mHostingInfo
+              ? ovhManagerProductOffersDetachService
+                  .getAvailableDetachPlancodes(start10mHostingInfo.serviceId)
+                  .then((plancodes) => ({
+                    serviceId: start10mHostingInfo.serviceId,
+                    detachPlancodes: [plancodes],
+                  }))
+                  .catch(() => null)
+              : null,
+          )
+          .catch(() => null)
+      : null,
 
+  start10mHosting: /* @ngInject */ (domainName, DomainGeneralInformation) =>
+    DomainGeneralInformation.getDomainOptions(domainName).then(
+      ({ hosting }) => hosting,
+    ),
   start10mOffers: /* @ngInject */ (availableOptions) =>
     availableOptions.filter(({ family }) => family === 'hosting'),
 };
@@ -41,6 +65,10 @@ export default /* @ngInject */ ($stateProvider) => {
 
         return promise;
       },
+      detachFreeWebhostingLink: /* @ngInject */ ($state, domainName) =>
+        $state.href('app.domain.product.information.detach-free-webhosting', {
+          productId: domainName,
+        }),
       enableWebhostingLink: /* @ngInject */ ($state, domainName) =>
         $state.href('app.domain.product.information.enable-webhosting', {
           productId: domainName,
@@ -74,6 +102,8 @@ export default /* @ngInject */ ($stateProvider) => {
 
         return promise;
       },
+      detachFreeWebhostingLink: /* @ngInject */ ($state) =>
+        $state.href('app.domain.alldom.information.detach-free-webhosting'),
       enableWebhostingLink: /* @ngInject */ ($state, allDom, domainName) =>
         $state.href('app.domain.alldom.information.enable-webhosting', {
           allDom,

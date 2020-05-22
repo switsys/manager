@@ -29,12 +29,15 @@ export default class DomainTabGeneralInformationsCtrl {
     $translate,
     Alerter,
     constants,
+    detachableStart10m,
     Domain,
+    detachFreeWebhostingLink,
     enableWebhostingLink,
     Hosting,
     HostingDomain,
     OvhApiDomainRules,
     OvhApiScreenshot,
+    start10mHosting,
     User,
     WucAllDom,
     DOMAIN,
@@ -49,12 +52,15 @@ export default class DomainTabGeneralInformationsCtrl {
     this.$translate = $translate;
     this.Alerter = Alerter;
     this.WucAllDom = WucAllDom;
+    this.detachableStart10m = detachableStart10m;
     this.Domain = Domain;
+    this.detachFreeWebhostingLink = detachFreeWebhostingLink;
     this.enableWebhostingLink = enableWebhostingLink;
     this.Hosting = Hosting;
     this.HostingDomain = HostingDomain;
     this.OvhApiDomainRules = OvhApiDomainRules;
     this.OvhApiScreenshot = OvhApiScreenshot.Aapi();
+    this.start10mHosting = start10mHosting;
     this.User = User;
     this.constants = constants;
     this.DOMAIN = DOMAIN;
@@ -298,8 +304,14 @@ export default class DomainTabGeneralInformationsCtrl {
         this.vm.hosting.web.selected.info = hostingInfo;
         this.hasStart10mOffer =
           hostingInfo.offer ===
-          this.constants.HOSTING.OFFERS.START_10_M.TYPE_VALUE;
+            this.constants.HOSTING.OFFERS.START_10_M.TYPE_VALUE ||
+          this.start10mHosting;
         this.displayFreeHosting = isEmpty(sites) || this.hasStart10mOffer;
+
+        this.isStart10mDetachable =
+          this.hasStart10mOffer &&
+          this.detachableStart10m &&
+          this.detachableStart10m.detachPlancodes.length > 0;
       })
       .finally(() => {
         this.loading.hosting = false;
