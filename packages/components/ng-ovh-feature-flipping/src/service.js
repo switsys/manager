@@ -1,3 +1,5 @@
+import FeatureAvailabilityResult from './feature-availability-result.class';
+
 export default class FeatureFlipping {
   constructor($http, applicationName) {
     this.$http = $http;
@@ -27,6 +29,6 @@ export default class FeatureFlipping {
         },
         serviceType: 'aapi',
       })
-      .then(({ data }) => data);
+      .then(({ data }) => new FeatureAvailabilityResult(data));
   }
 }
